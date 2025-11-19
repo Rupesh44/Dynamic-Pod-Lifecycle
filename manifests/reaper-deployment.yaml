@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reaper-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reaper-service
+  template:
+    metadata:
+      labels:
+        app: reaper-service
+    spec:
+      serviceAccountName: pod-manager-sa 
+      containers:
+      - name: reaper
+        image: reaper-service:latest
+        imagePullPolicy: Never 
+        env:
+          - name: RABBITMQ_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: rabbitmq-password
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: redis-password
+          - name: USER_POD_NAMESPACE
+            value: "default"
