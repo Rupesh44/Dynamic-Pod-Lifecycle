@@ -20,7 +20,9 @@ This project implements a secure, event-driven, and self-healing infrastructure 
 
 > **[CLICK HERE TO WATCH THE DEMO VIDEO (LOOM)]**
 > *https://www.loom.com/share/6a151a9e92154a72bf9d48c6c5f24b55*
+> 
 > **[CLICK HERE TO WATCH THE DEMO VIDEO (Drive)]**
+> 
 > *https://drive.google.com/file/d/1WbKLsiVeV981Rl2q-PVubvPlpSOjQT-R/view*
 
 ---
